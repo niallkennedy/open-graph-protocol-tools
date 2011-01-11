@@ -1,6 +1,11 @@
 <?php
 /**
- * Open Graph Protocol data class. Define and validate OGP values
+ * Open Graph Protocol data class. Define and validate OGP values.
+ *
+ * @package open-graph-protocol-tools
+ * @author Niall Kennedy <niall@niallkennedy.com>
+ * @version 1.2
+ * @copyright Public Domain
  */
 
 if ( !function_exists('_') ):
@@ -13,7 +18,6 @@ endif;
  * Validate inputted text against Open Graph Protocol requirements by parameter.
  *
  * @link http://ogp.me/ Open Graph Protocol
- * @package open-graph-protocol-tools
  * @version 1.2
  */
 class Open_Graph_Protocol {
