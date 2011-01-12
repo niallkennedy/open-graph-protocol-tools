@@ -202,6 +202,12 @@ class Open_Graph_Protocol {
 	public function toHTML( $rdf=true ) {
 		$s = '';
 		foreach( $this as $key=>$value ) {
+			if ( $key === 'street_address' )
+				$key = 'street-address';
+			elseif ( $key === 'postal_code' )
+				$key = 'postal-code';
+			elseif ( $key === 'country_name' )
+				$key = 'country-name';
 			$s .= $this->buildHTMLElement( $key, $value, $rdf );
 		}
 		return $s;
