@@ -337,15 +337,19 @@ class Open_Graph_Protocol {
 				'state_province' => _('State or province')
 			),
 			_('Products and Entertainment') => array(
-				'album' => _('Album'),
+				'music.album' => _('Music Album'),
 				'book' => _('Book'),
 				'drink' => _('Drink'),
+				'video.episode' => _('Video episode'),
 				'food' => _('Food'),
 				'game' => _('Game'),
-				'movie' => _('Movie'),
+				'video.movie' => _('Movie'),
+				'music.playlist' => _('Music playlist'),
 				'product' => _('Product'),
-				'song' => _('Song'),
-				'tv_show' => _('Television show'),
+				'music.radio_station' => _('Radio station'),
+				'music.song' => _('Song'),
+				'video.tv_show' => _('Television show'),
+				'video.other' => _('Video')
 			),
 			_('Websites') => array(
 				'article' => _('Article'),
