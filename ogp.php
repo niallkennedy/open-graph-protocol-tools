@@ -4,7 +4,7 @@
  *
  * @package open-graph-protocol-tools
  * @author Niall Kennedy <niall@niallkennedy.com>
- * @version 1.2
+ * @version 1.3
  * @copyright Public Domain
  */
 
@@ -18,13 +18,13 @@ endif;
  * Validate inputted text against Open Graph Protocol requirements by parameter.
  *
  * @link http://ogp.me/ Open Graph Protocol
- * @version 1.2
+ * @version 1.3
  */
 class Open_Graph_Protocol {
 	/**
 	 * Version
 	 */
-	const VERSION = '1.2';
+	const VERSION = '1.3';
 
 	/**
 	 * Page classification according to a pre-defined set of base types.
@@ -73,6 +73,14 @@ class Open_Graph_Protocol {
 	 * @since 1.0
 	 */
 	protected $image;
+
+	/**
+	 * The word that appears before this object's title in a sentence
+	 *
+	 * @var string
+	 * @since 1.3
+	 */
+    protected $determiner;
 
 	/**
 	 * A MP3 audio URL
@@ -471,6 +479,19 @@ class Open_Graph_Protocol {
 			if ( !empty( $image_uri ) )
 				$this->image = $image_uri;
 		}
+		return $this;
+	}
+
+	/**
+	 * @return string the determiner
+	 */
+	public function getDeterminer() {
+		return $this->determiner;
+	}
+
+	public function setDeterminer( $determiner ) {
+		if ( in_array($determiner, array('a','an','auto','the'), true) )
+			$this->determiner = $determiner;
 		return $this;
 	}
 
