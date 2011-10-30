@@ -18,7 +18,7 @@ The [Facebook Object Debugger](http://developers.facebook.com/tools/debug) displ
 
 ### mixi Check
 
-[Mixi indexes Open Graph protocol markup](http://groups.google.com/group/open-graph-protocol/browse_thread/thread/356d722abf70001d/397ec334ca87f122 "mixi Check Open Graph protocol Google Group announcement") in its [mixi Check](http://developer.mixi.co.jp/connect/mixi_graph_api/mixi_io_spec_top/check-api?lang=en) social sharing service.
+[Mixi indexes Open Graph protocol markup](http://groups.google.com/group/open-graph-protocol/browse_thread/thread/356d722abf70001d/397ec334ca87f122 "mixi Check Open Graph protocol Google Group announcement") in its [mixi Check](http://developer.mixi.co.jp/connect/mixi_graph_api/mixi_io_spec_top/check-api/?lang=en) social sharing service.
 
 ### Google Rich Snippets
 
