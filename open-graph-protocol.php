@@ -92,6 +92,13 @@ class OpenGraphProtocol {
     protected $determiner;
 
 	/**
+	 * Language and optional territory of page content.
+	 * @var string
+	 * @since 1.3
+	 */
+	protected $locale;
+
+	/**
 	 * An array of OpenGraphProtocolImage objects
 	 *
 	 * @var array
@@ -393,6 +400,22 @@ class OpenGraphProtocol {
 	public function setDeterminer( $determiner ) {
 		if ( in_array($determiner, array('a','an','auto','the'), true) )
 			$this->determiner = $determiner;
+		return $this;
+	}
+
+	/**
+	 * @return string language_TERRITORY
+	 */
+	public function getLocale() {
+		return $this->locale;
+	}
+
+	/**
+	 * @var string $locale locale in the format language_TERRITORY
+	 */
+	public function setLocale( $locale ) {
+		if ( is_string($locale) )
+			$this->locale = $locale;
 		return $this;
 	}
 
