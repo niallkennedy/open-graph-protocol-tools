@@ -20,6 +20,6 @@ The [Facebook Object Debugger](http://developers.facebook.com/tools/debug) displ
 
 [Mixi indexes Open Graph protocol markup](http://groups.google.com/group/open-graph-protocol/browse_thread/thread/356d722abf70001d/397ec334ca87f122 "mixi Check Open Graph protocol Google Group announcement") in its [mixi Check](http://developer.mixi.co.jp/connect/mixi_graph_api/mixi_io_spec_top/check-api/) social sharing service.
 
-### Google Rich Snippets
+### Google+ Snippet
 
-Google indexes Open Graph protocol rich media markup [to better understand video content](http://www.google.com/support/webmasters/bin/answer.py?answer=162163 "Google Rich Snippets for video") associated with a webpage.
+[Google indexes Open Graph protocol markup](https://developers.google.com/+/plugins/+1button/#plus-snippet) to populate a Google+ activity post.
