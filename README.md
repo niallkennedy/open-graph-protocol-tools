@@ -14,7 +14,7 @@ This project includes tools to validate and sanitize inputs before generating Op
 
 Open Graph protocol markup turns webpages into objects within the Facebook social graph, increasing search exposure and uniquely classifying your site and story type within the social news feed.
 
-The [Facebook URL Linter](http://developers.facebook.com/tools/lint) displays a Facebook interpretation of your site's Open Graph protocol content.
+The [Facebook Object Debugger](http://developers.facebook.com/tools/debug) displays a Facebook interpretation of your site's Open Graph protocol content.
 
 ### mixi Check
 
