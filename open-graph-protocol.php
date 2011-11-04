@@ -181,7 +181,7 @@ class OpenGraphProtocol {
 				'bar' => _('Bar'),
 				'cafe' => _('Cafe'),
 				'hotel' => _('Hotel'),
-				'restaurant' => ('Restaurant')
+				'restaurant' => _('Restaurant')
 			),
 			_('Groups') => array(
 				'cause' => _('Cause'),
