@@ -155,7 +155,7 @@ class OpenGraphProtocol {
 					$s .= static::buildHTML( $content, $prefix . ':' . $property );
 			} elseif ( !empty($content) ) {
 				$s .= '<meta ' . self::META_ATTR . '="' . $prefix;
-				if ( !empty($property) )
+				if ( is_string($property) && !empty($property) )
 					$s .= ':' . htmlspecialchars( $property );
 				$s .= '" content="' . htmlspecialchars($content) . '">' . PHP_EOL;
 			}
