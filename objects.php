@@ -20,7 +20,7 @@ abstract class OpenGraphProtocolObject {
 	 * @return string HTML meta element string
 	 */
 	public function toHTML() {
-		return rtrim( OpenGraphProtocol::buildHTML( get_object_vars($this), static::prefix ), PHP_EOL );
+		return rtrim( OpenGraphProtocol::buildHTML( get_object_vars($this), static::PREFIX ), PHP_EOL );
 	}
 }
 
