@@ -12,7 +12,7 @@ if ( !class_exists('OpenGraphProtocol') )
 	require_once dirname(__FILE__) . '/open-graph-protocol.php';
 
 abstract class OpenGraphProtocolObject {
-	const prefix ='';
+	const PREFIX ='';
 	const NS='';
 
 	/**
@@ -29,7 +29,7 @@ class OpenGraphProtocolArticle extends OpenGraphProtocolObject {
 	 * Property prefix
 	 * @var string
 	 */
-	const prefix = 'article';
+	const PREFIX = 'article';
 
 	/**
 	 * prefix namespace
@@ -215,7 +215,7 @@ class OpenGraphProtocolProfile extends OpenGraphProtocolObject {
 	 * Property prefix
 	 * @var string
 	 */
-	const prefix = 'profile';
+	const PREFIX = 'profile';
 
 	/**
 	 * prefix namespace
