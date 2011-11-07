@@ -31,6 +31,7 @@ The [Facebook Object Debugger](http://developers.facebook.com/tools/debug) displ
 Support for structured properties for image, video, and audio objects.
 
 ```php
+<?php
 $image = new OpenGraphProtocolImage();
 $image->setURL( 'http://example.com/image.jpg' );
 $image->setSecureURL( 'https://example.com/image.jpg' );
@@ -49,6 +50,7 @@ $audio = new OpenGraphProtocolAudio();
 $audio->setURL( 'http://example.com/audio.mp3' );
 $audio->setSecureURL( 'https://example.com/audio.mp3' );
 $audio->setType('audio/mpeg');
+?>
 ```
 
 Declare a new `OpenGraphProtocol` object and set some properties. Add structured media objects.
