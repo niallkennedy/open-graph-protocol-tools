@@ -169,8 +169,13 @@ class OpenGraphProtocolArticle extends OpenGraphProtocolObject {
 	 * @param string $author_uri Author URI
 	 */
 	public function addAuthor( $author_uri ) {
-		if ( is_string($author_uri) && !in_array($author_uri, $this->author))
-			$this->author[] = $author_uri;
+		if ( is_string($author_uri) && !empty($author_uri) && !in_array($author_uri, $this->author)) {
+			if (OpenGraphProtocol::VERIFY_URLS) {
+				$author_uri = OpenGraphProtocol::is_valid_url( $author_uri, array( 'text/html', 'application/xhtml+xml' ) );
+			}
+			if (!empty($author_uri))
+				$this->author[] = $author_uri;
+		}
 		return $this;
 	}
 
@@ -378,8 +383,13 @@ class OpenGraphProtocolBook extends OpenGraphProtocolObject {
 	 * @param string $author_uri
 	 */
 	public function addAuthor( $author_uri ) {
-		if ( is_string($author_uri) && !empty($author_uri) && !in_array($author_uri, $this->author) )
-			$this->author[] = $author_uri;
+		if ( is_string($author_uri) && !empty($author_uri) && !in_array($author_uri, $this->author)) {
+			if (OpenGraphProtocol::VERIFY_URLS) {
+				$author_uri = OpenGraphProtocol::is_valid_url( $author_uri, array( 'text/html', 'application/xhtml+xml' ) );
+			}
+			if (!empty($author_uri))
+				$this->author[] = $author_uri;
+		}
 		return $this;
 	}
 
