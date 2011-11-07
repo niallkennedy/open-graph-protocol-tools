@@ -56,6 +56,7 @@ $audio->setType('audio/mpeg');
 Declare a new `OpenGraphProtocol` object and set some properties. Add structured media objects.
 
 ```php
+<?php
 $ogp = new OpenGraphProtocol();
 $ogp->setLocale( 'en_US' );
 $ogp->setSiteName( 'Happy place' );
@@ -67,12 +68,15 @@ $ogp->setDeterminer( 'the' );
 $ogp->addImage($image);
 $ogp->addAudio($audio);
 $ogp->addVideo($video);
+?>
 ```
 
 Output your OpenGraphProtocol object as HTML `<meta>` elements. Default configuration uses the `property` attribute from RDFa. Change to `name` if you prefer HTML specification compliance and consuming agents support the `name` attribute as a `property` fallback.
 
 ```php
+<?php
 $ogp->toHTML();
+?>
 ```
 
 ### Global objects
@@ -80,6 +84,7 @@ $ogp->toHTML();
 Build global objects and attributes. Set time values using either an ISO 8601 formatted string or a DateTime object. DateTimes will be converted to the UTC timezone before output for consistency.
 
 ```php
+<?php
 $article = new OpenGraphProtocolArticle();
 $article->setPublishedTime('2011-11-03T01:23:45Z');
 $article->setModifiedTime(new DateTime('now', new DateTimeZone('America/Los_Angeles')));
@@ -88,12 +93,15 @@ $article->setSection('Front page');
 $article->addTag('weather');
 $article->addTag('football');
 $article->addAuthor('http://example.com/author.html');
+?>
 ```
 
 Convert a global object to `<meta>` elements just as you would with `OpenGraphProtocol.`
 
 ```php
+<?php
 $article->toHTML();
+?>
 ```
 
 ### Combined
@@ -101,6 +109,7 @@ $article->toHTML();
 A common use case might be storing Open Graph protocol objects in a Controller for use by your web application. You can add each object to an array and later iterate through the array for `<head prefix="">` and `<meta>` outputs.
 
 ```php
+<?php
 $ogp_objects = array($ogp,$article);
 $prefix = '';
 $meta = '';
