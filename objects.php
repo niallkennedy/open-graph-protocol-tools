@@ -32,6 +32,26 @@ abstract class OpenGraphProtocolObject {
 		$date->setTimezone(new DateTimeZone('GMT'));
 		return $date->format('c');
 	}
+
+	/**
+	 * Test a URL for validity.
+	 *
+	 * @uses OpenGraphProtocol::is_valid_url if OpenGraphProtocol::VERIFY_URLS is true
+	 * @param string $url absolute URL addressable from the public web
+	 * @return bool true if URL is non-empty string. if VERIFY_URLS set then URL must also properly respond to a HTTP request.
+	 */
+	public static function is_valid_url( $url ) {
+		if ( is_string($url) && !empty($url) ) {
+			if (OpenGraphProtocol::VERIFY_URLS) {
+				$url = OpenGraphProtocol::is_valid_url( $url, array( 'text/html', 'application/xhtml+xml' ) );
+				if (!empty($url))
+					return true;
+			} else {
+				return true;
+			}
+		}
+		return false;
+	}
 }
 
 class OpenGraphProtocolArticle extends OpenGraphProtocolObject {
@@ -169,13 +189,9 @@ class OpenGraphProtocolArticle extends OpenGraphProtocolObject {
 	 * @param string $author_uri Author URI
 	 */
 	public function addAuthor( $author_uri ) {
-		if ( is_string($author_uri) && !empty($author_uri) && !in_array($author_uri, $this->author)) {
-			if (OpenGraphProtocol::VERIFY_URLS) {
-				$author_uri = OpenGraphProtocol::is_valid_url( $author_uri, array( 'text/html', 'application/xhtml+xml' ) );
-			}
-			if (!empty($author_uri))
-				$this->author[] = $author_uri;
-		}
+		var_dump( static::is_valid_url($author_uri) );
+		if ( static::is_valid_url($author_uri) && !in_array($author_uri, $this->author))
+			$this->author[] = $author_uri;
 		return $this;
 	}
 
@@ -383,13 +399,8 @@ class OpenGraphProtocolBook extends OpenGraphProtocolObject {
 	 * @param string $author_uri
 	 */
 	public function addAuthor( $author_uri ) {
-		if ( is_string($author_uri) && !empty($author_uri) && !in_array($author_uri, $this->author)) {
-			if (OpenGraphProtocol::VERIFY_URLS) {
-				$author_uri = OpenGraphProtocol::is_valid_url( $author_uri, array( 'text/html', 'application/xhtml+xml' ) );
-			}
-			if (!empty($author_uri))
-				$this->author[] = $author_uri;
-		}
+		if ( static::is_valid_url($author_uri) && !in_array($author_uri, $this->author))
+			$this->author[] = $author_uri;
 		return $this;
 	}
 
