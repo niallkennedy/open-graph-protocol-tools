@@ -149,7 +149,7 @@ class OpenGraphProtocol {
 			if ( is_object( $content ) || is_array( $content ) ) {
 				if ( is_object( $content ) )
 					$content = $content->toArray();
-				if ( empty($property) )
+				if ( empty($property) || !is_string($property) )
 					$s .= static::buildHTML( $content, $prefix );
 				else
 					$s .= static::buildHTML( $content, $prefix . ':' . $property );
