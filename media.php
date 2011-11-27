@@ -79,6 +79,15 @@ abstract class OpenGraphProtocolMedia {
 	}
 
 	/**
+	 * Remove the URL property.
+	 * Sets up the maximum compatibility between image and image:url indexers
+	 */
+	public function removeURL() {
+		if ( !empty($this->url) )
+			unset($this->url);
+	}
+
+	/**
 	 * @return string secure URL string or null if not set
 	 */
 	public function getSecureURL() {

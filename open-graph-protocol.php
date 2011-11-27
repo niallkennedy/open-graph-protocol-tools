@@ -537,10 +537,15 @@ class OpenGraphProtocol {
 	 * @param OpenGraphProtocolImage $image image object to add
 	 */
 	public function addImage( OpenGraphProtocolImage $image ) {
+		$image_url = $image->getURL();
+		if ( empty($image_url) )
+			return;
+		$image->removeURL();
+		$value = array( $image_url, array($image) );
 		if ( ! isset( $this->image ) )
-			$this->image = array( $image );
+			$this->image = array( $value );
 		else
-			$this->image[] = $image;
+			$this->image[] = $value;
 		return $this;
 	}
 
@@ -558,10 +563,15 @@ class OpenGraphProtocol {
 	 * @param OpenGraphProtocolAudio $audio audio object to add
 	 */
 	public function addAudio( OpenGraphProtocolAudio $audio ) {
+		$audio_url = $audio->getURL();
+		if ( empty($audio_url) )
+			return;
+		$audio->removeURL();
+		$value = array( $audio_url, array($audio) );
 		if ( ! isset($this->audio) )
-			$this->audio = array($audio);
+			$this->audio = array($value);
 		else
-			$this->audio[] = $audio;
+			$this->audio[] = $value;
 		return $this;
 	}
 
@@ -579,10 +589,15 @@ class OpenGraphProtocol {
 	 * @param OpenGraphProtocolVideo $video video object to add
 	 */
 	public function addVideo( OpenGraphProtocolVideo $video ) {
+		$video_url = $video->getURL();
+		if ( empty($video_url) )
+			return;
+		$video->removeURL();
+		$value = array( $video_url, array($video) );
 		if ( ! isset( $this->video ) )
-			$this->video = array( $video );
+			$this->video = array( $value );
 		else
-			$this->video[] = $video;
+			$this->video[] = $value;
 		return $this;
 	}
 }
