@@ -189,7 +189,6 @@ class OpenGraphProtocolArticle extends OpenGraphProtocolObject {
 	 * @param string $author_uri Author URI
 	 */
 	public function addAuthor( $author_uri ) {
-		var_dump( static::is_valid_url($author_uri) );
 		if ( static::is_valid_url($author_uri) && !in_array($author_uri, $this->author))
 			$this->author[] = $author_uri;
 		return $this;
