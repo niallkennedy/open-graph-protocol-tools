@@ -57,9 +57,9 @@ abstract class OpenGraphProtocolMedia {
 	/**
 	 * @return string URL string or null if not set
 	 */
-    public function getURL() {
-    	return $this->url;
-    }
+	public function getURL() {
+		return $this->url;
+	}
 
 	/**
 	 * Set the media URL
@@ -142,7 +142,7 @@ abstract class OpenGraphProtocolVisualMedia extends OpenGraphProtocolMedia {
 	 */
 	protected $width;
 
-    	/**
+	/**
 	 * @return int width in pixels
 	 */
 	public function getWidth() {
