@@ -41,7 +41,7 @@ class OpenGraphProtocol {
 	 * Meta attribute name. Use 'property' if you prefer RDF or 'name' if you prefer HTML validation
 	 * @var string
 	 */
-    const META_ATTR = 'property';
+	const META_ATTR = 'property';
 
 	/**
 	 * Property prefix
