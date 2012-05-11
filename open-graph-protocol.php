@@ -101,7 +101,7 @@ class OpenGraphProtocol {
 	 * @var string
 	 * @since 1.3
 	 */
-    protected $determiner;
+	protected $determiner;
 
 	/**
 	 * Language and optional territory of page content.
@@ -383,7 +383,7 @@ class OpenGraphProtocol {
 		return $url;
 	}
 
-    /**
+	/**
 	 * Output the OpenGraphProtocol object as HTML elements string
 	 *
 	 * @return string meta elements
