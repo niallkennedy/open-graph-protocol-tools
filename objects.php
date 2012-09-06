@@ -606,10 +606,14 @@ class OpenGraphProtocolVideoObject extends OpenGraphProtocolObject {
 	 * Add a writer profile URL
 	 *
 	 * @param string $url writer profile URL
+	 *
+	 * @return OpenGraphProtocolVideoObject
 	 */
 	public function addWriter( $url ) {
 		if ( static::is_valid_url($url) && !in_array($url, $this->writer) )
 			$this->writer[] = $url;
+			
+		return $this;
 	}
 
 	/**
