@@ -198,7 +198,7 @@ class OpenGraphProtocolArticle extends OpenGraphProtocolObject {
 	 * High-level section name
 	 */
 	public function getSection() {
-		return $this->section();
+		return $this->section;
 	}
 
 	/**
