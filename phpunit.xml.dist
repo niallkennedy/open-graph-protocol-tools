@@ -20,7 +20,7 @@
     processIsolation            = "false"
     stopOnFailure               = "false"
     syntaxCheck                 = "false"
-    bootstrap                   = "Tests/bootstrap.php" >
+    bootstrap                   = "bootstrap.php" >
 
     <testsuites>
         <testsuite name="Project Test Suite">
@@ -36,3 +36,4 @@
         </whitelist>
     </filter>
 </phpunit>
+
