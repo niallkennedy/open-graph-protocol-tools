@@ -214,14 +214,15 @@ class BackwardCompatibilityTest extends PHPUnit_Framework_TestCase
     public function testCombined()
     {
         $ogp = $this->createOpenGraphProtocol();
-        $article = new OpenGraphProtocolArticle();
+        $article = $this->createGlobalArticle();
         /* From docs */
         $ogp_objects = array( $ogp, $article );
         $prefix = '';
         $meta = '';
+        $values = array();
         foreach ($ogp_objects as $ogp_object) {
             $prefix .= $ogp_object::PREFIX . ': ' . $ogp_object::NS . ' ';
-            $meta .= $ogp_object->toHTML() . PHP_EOL;
+            $meta   .= $ogp_object->toHTML() . PHP_EOL;
         }
         $expectedPrefix = 'og: http://ogp.me/ns# article: http://ogp.me/ns/article# ';
         $expectedMeta =
@@ -245,7 +246,13 @@ class BackwardCompatibilityTest extends PHPUnit_Framework_TestCase
             '<meta property="og:video:width" content="500">' . "\n" .
             '<meta property="og:video:secure_url" content="https://example.com/video.swf">' . "\n" .
             '<meta property="og:video:type" content="application/x-shockwave-flash">' . "\n" .
-            "\n";
+            '<meta property="article:published_time" content="2011-11-03T01:23:45Z">' . "\n" .
+            '<meta property="article:modified_time" content="2013-02-15T00:39:06+00:00">' . "\n" .
+            '<meta property="article:expiration_time" content="2011-12-31T23:59:59+00:00">' . "\n" .
+            '<meta property="article:author" content="http://example.com/author.html">' . "\n" .
+            '<meta property="article:section" content="Front page">' . "\n" .
+            '<meta property="article:tag" content="weather">' . "\n" .
+            '<meta property="article:tag" content="football">' . "\n";
         $this->assertEquals($expectedPrefix, $prefix);
         $this->assertEquals($expectedMeta, $meta);
     }
