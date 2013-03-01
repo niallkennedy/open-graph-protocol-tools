@@ -129,7 +129,7 @@ class OpenGraphProtocol
 
     private static function gettext($text, $domain = '')
     {
-        return function_exists('gettext') ? gettext($text, $domain) : $text;
+        return function_exists('gettext') ? gettext($text) : $text;
     }
 
     /**
