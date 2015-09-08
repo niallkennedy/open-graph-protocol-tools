@@ -17,10 +17,13 @@ abstract class OpenGraphProtocolObject {
 
 	/**
 	 * Output the object as HTML <meta> elements
+	 *
+	 * @param string $encoding
+	 *
 	 * @return string HTML meta element string
 	 */
-	public function toHTML() {
-		return rtrim( OpenGraphProtocol::buildHTML( get_object_vars($this), static::PREFIX ), PHP_EOL );
+	public function toHTML($encoding = 'UTF-8') {
+		return rtrim( OpenGraphProtocol::buildHTML( get_object_vars($this), static::PREFIX, $encoding ), PHP_EOL );
 	}
 
 	/**

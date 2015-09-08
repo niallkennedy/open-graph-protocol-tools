@@ -137,10 +137,13 @@ class OpenGraphProtocol {
 	/**
 	 * Build Open Graph protocol HTML markup based on an array
 	 *
-	 * @param array $og associative array of OGP properties and values
+	 * @param array  $og     associative array of OGP properties and values
 	 * @param string $prefix optional prefix to prepend to all properties
+	 * @param string $encoding encoding for htmlspecialchars
+	 *
+	 * @return string
 	 */
-	public static function buildHTML( array $og, $prefix=self::PREFIX ) {
+	public static function buildHTML( array $og, $prefix=self::PREFIX, $encoding = 'UTF-8' ) {
 		if ( empty($og) )
 			return;
 
@@ -150,14 +153,14 @@ class OpenGraphProtocol {
 				if ( is_object( $content ) )
 					$content = $content->toArray();
 				if ( empty($property) || !is_string($property) )
-					$s .= static::buildHTML( $content, $prefix );
+					$s .= static::buildHTML( $content, $prefix, $encoding );
 				else
-					$s .= static::buildHTML( $content, $prefix . ':' . $property );
+					$s .= static::buildHTML( $content, $prefix . ':' . $property, $encoding );
 			} elseif ( !empty($content) ) {
 				$s .= '<meta ' . self::META_ATTR . '="' . $prefix;
 				if ( is_string($property) && !empty($property) )
-					$s .= ':' . htmlspecialchars( $property );
-				$s .= '" content="' . htmlspecialchars($content) . '">' . PHP_EOL;
+					$s .= ':' . htmlspecialchars( $property , ENT_COMPAT, $encoding );
+				$s .= '" content="' . htmlspecialchars($content, ENT_COMPAT, $encoding ) . '">' . PHP_EOL;
 			}
 		}
 		return $s;
@@ -445,10 +448,12 @@ class OpenGraphProtocol {
 	/**
 	 * Output the OpenGraphProtocol object as HTML elements string
 	 *
+	 * @param string $encoding
+	 *
 	 * @return string meta elements
 	 */
-	public function toHTML() {
-		return rtrim( static::buildHTML( get_object_vars($this) ), PHP_EOL );
+	public function toHTML($encoding = 'UTF-8') {
+		return rtrim( static::buildHTML( get_object_vars($this), static::PREFIX, $encoding ), PHP_EOL );
 	}
 
 	/**
