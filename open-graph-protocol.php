@@ -1,4 +1,5 @@
 <?php
+namespace Niall\OpenGraphProtocol;
 /**
  * Open Graph Protocol data class. Define and validate OGP values.
  *
