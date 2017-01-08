@@ -7,6 +7,12 @@
   "homepage": "http://www.niallkennedy.com/blog/"
   }
 ],
+  "autoload": {
+	"psr-4": {
+	    "Niallkenned\\OpengraphProtocolTools\\": "src"
+	}
+    },
+"minimum-stability": "dev",
 "require": {
   "php": ">=4"
 }
