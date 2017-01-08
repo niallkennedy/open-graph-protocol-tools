@@ -1,5 +1,5 @@
 <?php
-namespace Niall\OpenGraphProtocol
+namespace Niall\OpenGraphProtocol;
 /**
  * Structured properties representations of Open Graph protocol media: image, video, audio
  *
