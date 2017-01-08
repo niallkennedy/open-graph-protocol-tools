@@ -1,0 +1,14 @@
+{
+"name":"niallkennedy/open-graph-protocol-tools",
+"homepage":" http://ogp.me/",
+"authors": [
+  "name": "Niall Kennedy"
+  "homepage":"http://www.niallkennedy.com/blog/"
+],
+
+
+"require": {
+  "php": ">=4"
+}
+
+}
