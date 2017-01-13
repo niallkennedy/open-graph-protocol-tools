@@ -9,7 +9,7 @@
 ],
   "autoload": {
 	"psr-4": {
-	    "Niall\\OpenGraphProtocol\\": "./"
+	    "Niall\\OpenGraphProtocol\\": "."
 	}
     },
 "minimum-stability": "dev",
