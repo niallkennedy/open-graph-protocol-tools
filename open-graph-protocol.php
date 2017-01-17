@@ -145,7 +145,12 @@ class OpenGraphProtocol {
 		if ( empty($og) )
 			return;
 
-		$s = '';
+	        $s = '';
+	        if ($prefix === null || $prefix === '') {
+		    $prefixcolon = '';
+		} else {
+		    $prefixcolon = $prefix;
+		}
 		foreach ( $og as $property => $content ) {
 			if ( is_object( $content ) || is_array( $content ) ) {
 				if ( is_object( $content ) )
@@ -153,7 +158,7 @@ class OpenGraphProtocol {
 				if ( empty($property) || !is_string($property) )
 					$s .= static::buildHTML( $content, $prefix );
 				else
-					$s .= static::buildHTML( $content, $prefix . ':' . $property );
+					$s .= static::buildHTML( $content, $prefixcolon . $property );
 			} elseif ( !empty($content) ) {
 				$s .= '<meta ' . self::META_ATTR . '="' . $prefix;
 				if ( is_string($property) && !empty($property) )
@@ -198,7 +203,7 @@ class OpenGraphProtocol {
 			),
 			_('People') => array(
 				'actor' => _('Actor or actress'),
-				'athlete' => _('Athlete'), 
+				'athlete' => _('Athlete'),
 				'author' => _('Author'),
 				'director' => _('Director'),
 				'musician' => _('Musician'),
