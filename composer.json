@@ -1,0 +1,20 @@
+{
+"name":"niallkennedy/open-graph-protocol-tools",
+"homepage": "http://ogp.me/",
+"authors": [
+  {
+  "name": "Niall Kennedy",
+  "homepage": "http://www.niallkennedy.com/blog/"
+  }
+],
+  "autoload": {
+	"psr-4": {
+	    "Niall\\OpenGraphProtocol\\": "."
+	}
+    },
+"minimum-stability": "dev",
+"require": {
+  "php": ">=4"
+}
+
+}

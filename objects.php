@@ -1,4 +1,5 @@
 <?php
+namespace Niall\OpenGraphProtocol;
 /**
  * Open Graph protocol global types
  *
